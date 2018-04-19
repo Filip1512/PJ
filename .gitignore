@@ -77,3 +77,7 @@ POJ/Semestr02/.metadata/.plugins/org.eclipse.jdt.core/assumedExternalFilesCache
 POJ/Semestr02/.metadata/.plugins/org.eclipse.ui.intro/introstate
 POJ/Semestr02/.metadata/.plugins/org.eclipse.jdt.core/nonChainingJarsCache
 *.class
+*.png
+*.cfs
+POJ/Semestr02/.recommenders/index/http___download_eclipse_org_recommenders_models_oxygen_/segments_4
+POJ/Semestr02/.metadata/.plugins/org.eclipse.recommenders.types.rcp/indexes/LoanApp/segments_1d
