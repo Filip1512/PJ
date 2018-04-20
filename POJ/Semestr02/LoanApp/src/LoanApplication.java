@@ -1,13 +1,18 @@
 import java.util.Scanner;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
 public class LoanApplication {
 
 	public static void main(String[] args) {
 		
 		Scanner klawiatura = new Scanner (System.in);
+		Pattern compiledPattern = Pattern.compile("[A-Z][a-z]+");
+		Matcher matcher = compiledPattern.matcher(klawiatura.nextLine());
+		
 		
 		System.out.println("Podaj imie: ");
-		String firstName = klawiatura.nextLine();
+		String firstName = matcher();
 		System.out.println("Podaj nazwisko: ");
 		String surname = klawiatura.nextLine();
 		
@@ -22,17 +27,23 @@ public class LoanApplication {
 		
 		System.out.println("Podaj date urodzenia (format DD-MM-RRRR): ");
 		String dateOfBirth = klawiatura.nextLine();
+		String day = dateOfBirth.substring(0,2);
+		String month = dateOfBirth.substring(3,5);
+		String year = dateOfBirth.substring(6,10);
 		
+		//String gender;
+		//do {
 		System.out.println("Podaj plec (M/K): ");
 		String gender = klawiatura.nextLine();
-		
-		System.out.println(firstName);
-		System.out.println(surname);
-		System.out.println(pesel);
-		System.out.println(nip);
-		System.out.println(bankAccountNumber);
-		System.out.println(dateOfBirth);
-		System.out.println(gender);
+		//} while (gender.equalsIgnoreCase("M") || gender.equalsIgnoreCase("K"));
+			
+		System.out.println("Imie: " + firstName);
+		System.out.println("Nazwisko: " + surname);
+		System.out.println("PESEL: " + pesel);
+		System.out.println("NIP: " + nip);
+		System.out.println("Nr. konta bankowego: " + bankAccountNumber);
+		System.out.println("Data urodzenia: " + day + "-" + month + "-" + year);
+		System.out.println("Plec: " + gender);
 		
 		
 		}
