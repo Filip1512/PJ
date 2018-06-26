@@ -27,7 +27,7 @@ int ITERATOR = 0;
 
 int main(int argc, char** argv) {
 
-	for (int i = 1; i < argc; i++) {		// od 1, zeby nie brak pod uwagi nazwy
+	for (int i = 1; i < argc; i++) {		// od 1, zeby nie brac pod uwagi nazwy
 		cout << "argv[" << i << "] = " << argv[i] << endl;
 	}
 
