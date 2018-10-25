@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# cos.sh
+
+ext=`echo $1 | sed -e 's/.*\.//'`
+
+echo rozszerzenie tego pliku to $ext
+
+if [ "$ext" = 'sh' ]; then
+echo "rozszerzenie to sh"
+else
+echo "rozszerzenie jest inne niz sh, zmieniam je..."
+fullname=`echo $1 | sed -e 's/\..*/\.sh/'`
+echo nowa zmieniona nazwa: $fullname
+mv $1 $fullname
+fi

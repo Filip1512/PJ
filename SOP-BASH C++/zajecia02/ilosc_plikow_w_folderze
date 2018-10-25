@@ -1,0 +1,8 @@
+#!/bin/bash
+ILE="echo `ls -l | wc -l`"
+if ($ILE > 5)
+then
+echo W biezacym katalogu znajduje sie $ILE plikow
+else
+echo --- blad ---
+fi

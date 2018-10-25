@@ -1,0 +1,18 @@
+#!/bin/bash
+
+kolor=$1
+tekst=$2
+
+echo -e \\e[$1m$2\\e[0m
+
+
+
+#       30      ustawienie koloru czarnego
+#       31      ustawienie koloru czerwonego
+#       32      ustawienie koloru zielonego
+#       33      ustawienie koloru brązowego
+#       34      ustawienie koloru niebieskiego
+#       35      ustawienie koloru fioletowego
+#       36      ustawienie koloru niebieskozielonego
+#       37      ustawienie koloru białego
+

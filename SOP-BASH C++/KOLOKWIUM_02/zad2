@@ -1,0 +1,17 @@
+#!/bin/bash
+
+regex='^[1-9][0-9]*'
+
+if [ $# == 4 ]; then
+	for i in "$@"; do
+		if [[ "$i" =~ $regex ]]; then
+			echo "$i"
+		else
+			echo "Argument musi byc liczba!"
+		fi
+	done
+
+
+else
+	echo "Skrypt musi przyjac 4 argumenty"
+fi

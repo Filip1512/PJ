@@ -27,7 +27,7 @@ int ITERATOR = 0;
 
 int main(int argc, char** argv) {
 
-	for (int i = 1; i < argc; i++) {		// od 1, zeby nie brac pod uwagi nazwy
+	for (int i = 1; i < argc; i++) {		// od 1, zeby nie brak pod uwagi nazwy
 		cout << "argv[" << i << "] = " << argv[i] << endl;
 	}
 
@@ -94,7 +94,7 @@ void hParentSignal(int signal) {
 	if (signal == 12) sygnal = "USR2";
 
 	cout << "(parent) Otrzymano sygnal " << sygnal << endl;
-	
+
 	if (signal == 2) kill(childPid, signal);
 }
 
@@ -128,7 +128,7 @@ void hChildMnozenie(int signal) {
 	}
 }
 
-void hChildSignalINT(int signal){
+void hChildSignalINT(int signal) {
 	cout << "(child) Otrzymano sygnal INT. Wylaczam program." << endl;
 	wait2 = false;
 }

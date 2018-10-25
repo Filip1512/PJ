@@ -1,0 +1,11 @@
+#!/bin/bash
+
+ls -l | fgrep ".c" listaPlikow
+echo "Pliki zapisane do listaPlikow"
+
+rozszerzenie=`echo $1 | sed -e 's/[^.]*//'`
+nazwa=`echo $1 | sed 's/\.[^.]*$//'`
+
+if ($rozszerzenie == c); then
+cc $nazwa.$rozszerzenie -o $nazwa
+fi

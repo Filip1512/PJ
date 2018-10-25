@@ -1,0 +1,38 @@
+#!/bin/bash
+
+wysokosc=$1
+
+if [ "$#" -lt "1" ]; then
+echo "Podaj wysokosc jako argument!"
+
+elif (($1 > 35)); then
+echo "Maksymalny rozmiar to 35"
+
+else
+	for ((linia = 1; linia <= $wysokosc; linia++)); do
+		for ((j = 1; j <= $wysokosc-$linia; j++)); do
+			echo -n " "
+		done
+		for ((k = 1; k <= 2*$linia-2; k++)); do
+			echo -n "*"
+		done
+		echo  "*"
+	done
+fi
+
+
+
+
+
+# wysokosc = 5
+# linia 1 - 4 spacje, 1 gwiazdka
+# linia 2 - 3 spacje, 3 gwiazdki
+# linia 3 - 2 spacje, 5 gwiazdek
+# linia 4 - 1 spacja, 7 gwiazdek
+# linia 5 - 0 spacji, 9 gwiazdek
+#
+#    *
+#   ***
+#  *****
+# *******
+#*********

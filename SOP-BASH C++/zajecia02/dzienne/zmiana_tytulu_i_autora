@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ ${#*} -lt 2 ]; then
+	echo "Skladnia:"
+	echo " ./skrypt [Tytul] [Autor]"
+else
+	cat index.inc | sed 's/[{][{]title[}][}]/'"$1"'/g' | sed 's/[{][{]author[}][}]/'"$2"'/g' > index.html
+fi

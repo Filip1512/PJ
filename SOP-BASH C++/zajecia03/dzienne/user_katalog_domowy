@@ -1,0 +1,23 @@
+#!/bin/bash
+
+echo "<table>" > lista.html
+
+for USER in `cat /etc/passwd`; do
+#	echo "<td>" >> lista.html
+
+	echo -n "<tr>" >> lista.html
+	echo -n $USER | sed 's/[:].*//' >> lista.html
+	echo -n "</tr>" >> lista.html
+
+	echo -n "<tr>" >> lista.html
+	echo -n $USER | sed 's/.*[:].*[:][0-9]+[:][0-9]+[:]//' >> lista.html
+	echo "</tr>" >> lista.html
+
+#	echo "</td>" >> lista.html
+done
+
+echo "</table>" >> lista.html
+
+
+#<tr></tr> - wiersz
+#<td></td> - komorka w wierszu

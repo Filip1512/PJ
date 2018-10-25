@@ -1,0 +1,60 @@
+#!/bin/bash
+
+echo "Ilosc znakow w drugim argumencie: ${#2}"
+
+if ((${#2} < 1)); then
+echo "Skladnia: nazwa_skryptu \"rozmiar\" \"tekst\""
+
+elif (($1 < 2 || $1 > 40)); then
+echo "Parametr pierwszy musi byc wiekszy od 2 i mniejszy od 40";
+echo "Drugi parametr to napis"
+
+elif ((${#2} > 2 * $1)); then
+echo "Zbyt dlugi tekst"
+
+else
+
+echo -n " "
+for ((i = 0; i < ((2* $1)); i++)); do
+	echo -n "-"
+done;
+
+echo " "
+
+for ((linia = 0; linia < $1; linia++)); do
+	dlugoscArg2=${#2}
+	if (( linia == (($1 / 2)) )); then
+		echo -n "|"
+		for ((k = 0; k < (($1 - dlugoscArg2/2)); k++)); do
+			echo -n " "
+		done;
+
+		echo -n $2
+
+		for ((d = 0; d < (($1 - 2*dlugoscArg2/4)); d++)); do
+			echo -n " "
+		done;
+
+		echo "|"
+
+	else
+
+		echo -n "|"
+		for ((p = 0; p < 2 * $1; p++)); do
+			echo -n " "
+		done;
+
+		echo "|"
+	fi
+
+done
+
+echo -n " "
+
+for ((linia = 0; linia < ((2 * $1)); linia++)); do
+	echo -n "-"
+done;
+
+echo ""
+
+fi

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+wget "http://szuflandia.pjwstk.edu.pl/~t0meck/sop/a/fun2018a.sh"
+
+mkdir inny
+mv fun2018a.sh inny/
+
+function getPath(){
+	echo `pwd`
+}
+
+. ./inny/fun2018a.sh 
+
+
