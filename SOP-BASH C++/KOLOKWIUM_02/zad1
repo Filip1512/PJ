@@ -1,6 +1,0 @@
-#!/bin/bash
-
-line=`cat intrLineFile | sed 's/[^0]//g' | wc -m`
-
-echo -n "Ilosc osobnych zer w /proc/stat to: "
-echo $line
