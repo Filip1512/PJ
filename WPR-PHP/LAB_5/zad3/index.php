@@ -1,8 +1,8 @@
 <?php
-$db_host = 'not';
-$db_user = 'this';
-$db_pass = 'time';
-$db_name = 'bro';
+$db_host = 'localhost';
+$db_user = 's16664';
+$db_pass = 'Fil.Krzy';
+$db_name = 's16664';
 
 include('header.html');
 
@@ -41,12 +41,12 @@ if ( isset($_POST['delButton']) )
 	}
 if ( isset($_POST['delEachButton']) )
 	{
-		$queryEachEmpty = ("DELETE FROM osoba WHERE Id={$_POST['dbRecordId']}");
-		echo $queryEachEmpty;
+		$queryDelEach = ("DELETE FROM osoba WHERE Id={$_POST['dbRecordId']}");
+		echo $queryDelEach;
 		
-		if ( !mysqli_query($db_lnk, $queryEachEmpty) )
+		if ( !mysqli_query($db_lnk, $queryDelEach) )
 		{
-			echo '<br><br>Blad queryEachEmpty';
+			echo '<br><br>Blad queryDelEach';
 		}	
 	}
 else
