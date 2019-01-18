@@ -1,8 +1,8 @@
 <?php
-$db_host = 'localhost';
-$db_user = 's16664';
-$db_pass = 'Fil.Krzy';
-$db_name = 's16664';
+$db_host = 'not';
+$db_user = 'this';
+$db_pass = 'time';
+$db_name = 'bro';
 
 include('header.html');
 
