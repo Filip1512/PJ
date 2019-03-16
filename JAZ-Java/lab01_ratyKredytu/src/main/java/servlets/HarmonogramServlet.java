@@ -41,7 +41,7 @@ public class HarmonogramServlet extends HttpServlet {
         {
             for (int numerRaty=1; numerRaty<=iloscRat; numerRaty++)
             {
-                double kwotaRaty -= (kwotaKredytu*Math.pow(1+(oprocentowanie/12),iloscRat)*oprocentowanie/12)/((Math.pow(1+(oprocentowanie/12),iloscRat)-1));
+                double kwotaRaty = (kwotaKredytu*Math.pow(1+(oprocentowanie/12),iloscRat)*oprocentowanie/12)/((Math.pow(1+(oprocentowanie/12),iloscRat)-1));
                 response.getWriter().println("<tr><td>" + numerRaty + "</td><td>" + Math.round(kwotaRaty * 100.00)/100.00  + " zł");
             }
         }
