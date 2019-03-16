@@ -7,7 +7,7 @@
 </head>
 
 <body>
-<form action="harmonogram" method="post">
+<form action="/harmonogram" method="post">
     <fieldset>
         <legend><h1 align="center">Wyliczanie rat kredytu</h1></legend>
         <table>
