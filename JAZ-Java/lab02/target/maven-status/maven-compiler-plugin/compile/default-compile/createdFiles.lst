@@ -1,0 +1,3 @@
+web\AddApplicantServlet.class
+web\filters\ApplicationDataInSessionFilter.class
+web\filters\RegistrationClosedFilter.class
