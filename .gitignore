@@ -29,7 +29,6 @@
 *.lock
 *.zip
 *.prefs
-*.xml
 *.setup
 *.rss
 *.index
