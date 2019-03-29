@@ -15,7 +15,7 @@ public class RegistrationClosedFilter implements Filter {
 
         int iloscZapisanychOsob = new DummyConferenceApplicationRepository().count();
 
-        if(iloscZapisanychOsob >= 2)
+        if(iloscZapisanychOsob >= 5)
         {
             response.getWriter().println("Rejestracja na konferencje już się zakończyła.");
             response.getWriter().println("Ilość zapisanych osób: " + iloscZapisanychOsob);
