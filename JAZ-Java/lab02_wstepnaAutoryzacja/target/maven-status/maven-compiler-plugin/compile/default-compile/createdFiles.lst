@@ -1,0 +1,4 @@
+domain\AuthApplication.class
+repositories\AuthApplicationRepository.class
+repositories\AbstractAuthApplicationRepository.class
+web\LoginServlet.class

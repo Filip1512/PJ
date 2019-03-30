@@ -1,4 +1,6 @@
 D:\STUDIA\PJWSTK\GIT\JAZ-Java\lab02\src\main\java\domain\ConferenceApplication.java
+D:\STUDIA\PJWSTK\GIT\JAZ-Java\lab02\src\main\java\web\filters\RegistrationClosedFilter.java
 D:\STUDIA\PJWSTK\GIT\JAZ-Java\lab02\src\main\java\repositories\ConferenceApplicationRepository.java
 D:\STUDIA\PJWSTK\GIT\JAZ-Java\lab02\src\main\java\repositories\DummyConferenceApplicationRepository.java
 D:\STUDIA\PJWSTK\GIT\JAZ-Java\lab02\src\main\java\web\AddApplicantServlet.java
+D:\STUDIA\PJWSTK\GIT\JAZ-Java\lab02\src\main\java\web\filters\ApplicationDataInSessionFilter.java
