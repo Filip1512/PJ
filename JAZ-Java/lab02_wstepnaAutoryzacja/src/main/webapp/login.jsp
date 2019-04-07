@@ -3,20 +3,19 @@
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html"; charset="UTF-8">
-    <title>Rejestracja</title>
+    <title>Tajna strona</title>
 </head>
 <body>
 
-<h3><a href="/"><i>Zaloguj się</i></a></h3>
+<h3><a href="register.jsp"><i>Stwórz nowe konto</i></a></h3>
 
-<form action="/register" method="post">
+<form action="/login" method="post">
     <fieldset>
-        <legend><h1>Zarejestruj się</h1></legend>
+        <legend><h1>Zaloguj się</h1></legend>
         <table>
             <tr><td>Nick</td><td><input type="text" id="username" name="username" required></td></tr>
             <tr><td>Hasło</td><td><input type="text" id="password" name="password" required></td></tr>
-            <tr><td>Email</td><td><input type="email" id="email" name="email" required></td></tr>
-            <tr><td><input value="Stwórz nowe konto" type="submit" id="register" name="register"></td></tr>
+            <tr><td><input value="Zaloguj się" type="submit" id="login" name="login"></td></tr>
         </table>
     </fieldset>
 </form>

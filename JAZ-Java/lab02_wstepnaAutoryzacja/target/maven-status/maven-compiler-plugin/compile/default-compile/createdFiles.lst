@@ -1,4 +1,10 @@
-domain\AuthApplication.class
-repositories\AuthApplicationRepository.class
-repositories\AbstractAuthApplicationRepository.class
+web\RegisterServlet.class
+web\WelcomeServlet.class
+repositories\LoginDAO.class
+domain\UserInfo.class
+repositories\UserInfoDAO.class
+web\EditServlet.class
+web\DeleteServlet.class
+web\EditServlet2.class
+web\ViewServlet.class
 web\LoginServlet.class

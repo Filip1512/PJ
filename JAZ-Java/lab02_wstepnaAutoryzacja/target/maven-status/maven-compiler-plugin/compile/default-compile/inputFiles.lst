@@ -1,4 +1,10 @@
-D:\STUDIA\PJWSTK\GIT\JAZ-Java\lab02_wstepnaAutoryzacja\src\main\java\repositories\AbstractAuthApplicationRepository.java
-D:\STUDIA\PJWSTK\GIT\JAZ-Java\lab02_wstepnaAutoryzacja\src\main\java\repositories\AuthApplicationRepository.java
+D:\STUDIA\PJWSTK\GIT\JAZ-Java\lab02_wstepnaAutoryzacja\src\main\java\repositories\LoginDAO.java
+D:\STUDIA\PJWSTK\GIT\JAZ-Java\lab02_wstepnaAutoryzacja\src\main\java\web\DeleteServlet.java
+D:\STUDIA\PJWSTK\GIT\JAZ-Java\lab02_wstepnaAutoryzacja\src\main\java\web\ViewServlet.java
+D:\STUDIA\PJWSTK\GIT\JAZ-Java\lab02_wstepnaAutoryzacja\src\main\java\web\EditServlet.java
 D:\STUDIA\PJWSTK\GIT\JAZ-Java\lab02_wstepnaAutoryzacja\src\main\java\web\LoginServlet.java
-D:\STUDIA\PJWSTK\GIT\JAZ-Java\lab02_wstepnaAutoryzacja\src\main\java\domain\AuthApplication.java
+D:\STUDIA\PJWSTK\GIT\JAZ-Java\lab02_wstepnaAutoryzacja\src\main\java\web\EditServlet2.java
+D:\STUDIA\PJWSTK\GIT\JAZ-Java\lab02_wstepnaAutoryzacja\src\main\java\domain\UserInfo.java
+D:\STUDIA\PJWSTK\GIT\JAZ-Java\lab02_wstepnaAutoryzacja\src\main\java\repositories\UserInfoDAO.java
+D:\STUDIA\PJWSTK\GIT\JAZ-Java\lab02_wstepnaAutoryzacja\src\main\java\web\RegisterServlet.java
+D:\STUDIA\PJWSTK\GIT\JAZ-Java\lab02_wstepnaAutoryzacja\src\main\java\web\WelcomeServlet.java

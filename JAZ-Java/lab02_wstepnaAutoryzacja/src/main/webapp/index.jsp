@@ -7,18 +7,9 @@
 </head>
 <body>
 
+<h3><a href="login.jsp"><i>Zaloguj się</i></a></h3>
 <h3><a href="register.jsp"><i>Stwórz nowe konto</i></a></h3>
 
-<form action="login" method="post">
-    <fieldset>
-        <legend><h1>Zaloguj się</h1></legend>
-        <table>
-            <tr><td>Nick</td><td><input type="text" id="username" name="username" required></td></tr>
-            <tr><td>Hasło</td><td><input type="text" id="surname" name="surname" required></td></tr>
-            <tr><td><input value="Zaloguj się" type="submit" id="login" name="login"></td></tr>
-        </table>
-    </fieldset>
-</form>
 
 </body>
 </html>
