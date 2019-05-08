@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="empty-jaz-rest">
+    <output-path>$PROJECT_DIR$/out/artifacts/empty_jaz_rest</output-path>
+    <root id="archive" name="empty-jaz-rest.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/src/main/webapp/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>
