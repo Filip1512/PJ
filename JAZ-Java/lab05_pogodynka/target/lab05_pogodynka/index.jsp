@@ -7,17 +7,18 @@
 <h1>Witaj na stronie - Pogodynka!</h1>
 Wybierz z formularza miasto, w którym interesuje Cie pogoda:
 
-<form action="/" method="post">
-    <select name="town">
-        <option>Warszawa</option>
-        <option>Gdańsk</option>
-        <option>Kraków</option>
-        <option>Wrocław</option>
-        <option>Poznań</option>
-        <option>Łódź</option>
-        <option>Katowice</option>
+<form action="/pogoda" method="get">
+    <select name="cityForm" id="cityForm">
+        <option value="Warsaw">Warszawa</option>
+        <option value="Gdansk">Gdańsk</option>
+        <option value="Krakow">Kraków</option>
+        <option value="Wroclaw">Wrocław</option>
+        <option value="Poznan">Poznań</option>
+        <option value="Lodz">Łódź</option>
+        <option value="Katowice">Katowice</option>
     </select>
     <input type="submit" value="Sprawdź pogodę">
 </form>
+
 </body>
 </html>
