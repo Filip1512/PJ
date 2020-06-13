@@ -1,13 +1,10 @@
-#include <iostream>
-#include <SDL.h>
+#include "pong.h"
 
-int main(int argc, char *argv[])
+int main(int argc, char* args[])
 {
-    if (SDL_Init(SDL_INIT_EVERYTHING) < 0)
-    {
-        std::cout << "SDL could not initialise! SDL error: " << SDL_GetError() << std::endl;
-    }
-
-
-    return EXIT_SUCCESS;
+    Pong pong;
+    pong.game_loop();
 }
+
+
+// stworzenie instacji okna z klasy pong i wywolanie metody game_loop() - zapêtlenie okna gry
