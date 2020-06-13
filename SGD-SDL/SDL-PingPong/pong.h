@@ -1,6 +1,8 @@
 #pragma once
 
-#include <SDL.h>
+#include "SDL.h"
+#include "paddle.h"
+#include "ball.h"
 
 class Pong {				// klasa Pong - glowna
 
@@ -14,8 +16,11 @@ public:
 	void draw();
 
 private:
-	SDL_Window* m_game_window;
-	SDL_Event m_game_window_event;
-	SDL_Renderer* m_game_window_renderer;
+	SDL_Window*		m_game_window;
+	SDL_Event		m_game_window_event;
+	SDL_Renderer*	m_game_window_renderer;
 
+	Ball			m_ball;
+	Paddle			m_left_paddle;
+	Paddle			m_right_paddle;
 };
