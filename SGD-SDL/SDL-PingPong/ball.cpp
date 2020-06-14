@@ -1,7 +1,9 @@
 #include "ball.h"
+#include "time.h"
+#include "SDL.h"
 
-#include "SDL.h""
-#include <random>
+#include <iostream>
+#include <cstdlib>
 
 Ball::~Ball()
 {
@@ -9,9 +11,10 @@ Ball::~Ball()
 }
 
 void Ball::init(SDL_Renderer* renderer, int x, int y)
-{
+{	
+	srand(time(NULL));
 	// ladowanie obrazu kulki
-
+	
 	IMG_Init(IMG_INIT_PNG);
 
 	SDL_Surface* image = IMG_Load("ball.png");
@@ -21,20 +24,18 @@ void Ball::init(SDL_Renderer* renderer, int x, int y)
 
 	IMG_Quit();
 
-	// koniec ladowania obrazu kulki
-
+	 //koniec ladowania obrazu kulki
+	 
 	m_position.x = x;
 	m_position.y = y;
 
 	m_x = m_position.x;
-
 	SDL_QueryTexture(m_image, nullptr, nullptr, &m_position.w, &m_position.h);
 
-	std::random_device dev;
-	std::mt19937 rd(dev());// szybszy/lepszy generator liczb pseudolosowych, maly zakres liczb (19937) - wystarczajacy do wygenerowania liczby w przedziale <0,1>, wylosowanie kierunku toru kulki (lewo/prawo)
-	std::uniform_int_distribution<> dist(0, 1);
 	
-	if (dist(rd) == 0)
+	int num = rand() % 2;
+
+	if (num == 0)
 	{
 		m_velocity = 3;
 	}
@@ -42,9 +43,8 @@ void Ball::init(SDL_Renderer* renderer, int x, int y)
 	{
 		m_velocity = -3;
 	}
-
+	
 }
-
 
 void Ball::update(double delta_time)
 {

@@ -1,5 +1,7 @@
 #include "pong.h"
 
+#include <iostream>
+
 // stworzenie okna gry
 Pong::Pong() : m_left_paddle(Paddle::Type::LEFT, 0, (400 / 2) - 50), m_right_paddle(Paddle::Type::RIGHT, 400 - 50, (400 / 2) - 50) 
 {
@@ -10,13 +12,13 @@ Pong::Pong() : m_left_paddle(Paddle::Type::LEFT, 0, (400 / 2) - 50), m_right_pad
 
 	SDL_CreateWindowAndRenderer(WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_RESIZABLE, &m_game_window, &m_game_window_renderer);
 	SDL_RenderSetLogicalSize(m_game_window_renderer, GAME_WIDTH, GAME_HEIGHT);
-	m_ball.init(m_game_window_renderer, GAME_WIDTH, GAME_HEIGHT);
+	m_ball.init(m_game_window_renderer, (GAME_WIDTH/2)-12, (GAME_HEIGHT/2)-12);
+	std::cout << SDL_GetError() << std::endl;
 }	
 
 
 void Pong::game_loop()
 {
-
 	bool keep_running = true;
 	while (keep_running)
 	{
@@ -30,15 +32,12 @@ void Pong::game_loop()
 
 			m_left_paddle.handle_input(m_game_window_event);
 			m_right_paddle.handle_input(m_game_window_event);
-
 		}
 
 		update(1.0 / 60.0);	// 60fps
 		draw();
 	}
 }
-
-
 
 void Pong::update(double delta_time)
 {
