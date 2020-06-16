@@ -66,7 +66,7 @@ void Ball::update(double delta_time)
 	if (m_position.y <= 0) {
 		m_velocity_y = -m_velocity_y;
 	}
-	else if (m_position.y >= g_GAME_WIDTH - 16) {			// 16 - wysokosc kulki
+	else if (m_position.y >= g_GAME_HEIGHT - 16) {			// 16 - wysokosc kulki
 		m_velocity_y = -m_velocity_y;
 	}
 
