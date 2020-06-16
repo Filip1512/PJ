@@ -1,21 +1,14 @@
 #include "pong.h"
 
-#include <iostream>
-
 // stworzenie okna gry
-Pong::Pong() : m_left_paddle(Paddle::Type::LEFT, 0, (400 / 2) - 50), m_right_paddle(Paddle::Type::RIGHT, 400 - 50, (400 / 2) - 50) 
+// na dole w Paddle::Type::RIGHT pozycja x to "g_GAME_WIDTH - 5", bo szerokosc paddla to 5 i wychodzi³o poza okno gry :)
+Pong::Pong() : m_left_paddle(Paddle::Type::LEFT, 0, (g_GAME_HEIGHT / 2) - 50), m_right_paddle(Paddle::Type::RIGHT, g_GAME_WIDTH - 5, (g_GAME_HEIGHT / 2) - 50)
 {
-	const int WINDOW_WIDTH = 640;
-	const int WINDOW_HEIGHT = 480;
-	const int GAME_WIDTH = 400;
-	const int GAME_HEIGHT = 400;
-
-	SDL_CreateWindowAndRenderer(WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_RESIZABLE, &m_game_window, &m_game_window_renderer);
-	SDL_RenderSetLogicalSize(m_game_window_renderer, GAME_WIDTH, GAME_HEIGHT);
-	m_ball.init(m_game_window_renderer, (GAME_WIDTH/2)-12, (GAME_HEIGHT/2)-12);
-	std::cout << SDL_GetError() << std::endl;
+	SDL_SetWindowTitle(m_game_window, "Ping Pong by Filip");
+	SDL_CreateWindowAndRenderer(g_WINDOW_WIDTH, g_WINDOW_HEIGHT, SDL_WINDOW_RESIZABLE, &m_game_window, &m_game_window_renderer);
+	SDL_RenderSetLogicalSize(m_game_window_renderer, g_GAME_WIDTH, g_GAME_HEIGHT);
+	m_ball.init(m_game_window_renderer, (g_GAME_WIDTH/2)-25, (g_GAME_HEIGHT/2)-25);
 }	
-
 
 void Pong::game_loop()
 {

@@ -1,4 +1,5 @@
 #include "paddle.h"
+#include "pong.h"
 
 Paddle::Paddle(Type type, int x, int y)
 {
@@ -17,7 +18,6 @@ void Paddle::handle_input(SDL_Event const &event)
 	{
 		case SDL_KEYDOWN:
 			Uint8 const* key = SDL_GetKeyboardState(nullptr);
-
 			// --------------------------------- LEWY PAD, poruszanie siê
 			if (m_type == Type::LEFT)
 			{
@@ -49,12 +49,20 @@ void Paddle::update(double delta_time)
 {
 	if (m_direction == Direction::UP)
 	{
+		if (m_position.y < 0) m_direction = Direction::NONE;
+
 		m_y = m_y - 5.0 * delta_time;
 		m_position.y = m_y;
 	}
 	if (m_direction == Direction::DOWN)
 	{
+		if (m_position.y > g_GAME_HEIGHT - m_position.h) m_direction = Direction::NONE;
+
 		m_y = m_y + 5.0 * delta_time;
+		m_position.y = m_y;
+	}
+	if (m_direction == Direction::NONE)
+	{
 		m_position.y = m_y;
 	}
 }

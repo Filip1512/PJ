@@ -15,8 +15,10 @@ public:
 
 
 private:
-    int m_velocity;
-    double m_x;
+    int m_velocity_x;
+    int m_velocity_y;
+    double current_x;
+    double current_y;
     SDL_Texture* m_image;
     SDL_Rect m_position;
 };

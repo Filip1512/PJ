@@ -4,6 +4,11 @@
 #include "paddle.h"
 #include "ball.h"
 
+const int g_WINDOW_WIDTH = 640;
+const int g_WINDOW_HEIGHT = 480;
+const int g_GAME_WIDTH = 400;
+const int g_GAME_HEIGHT = 400;
+
 class Pong {				// klasa Pong - glowna
 
 public:
