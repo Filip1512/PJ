@@ -2,6 +2,7 @@
 
 #include "SDL.h"
 #include "SDL_image.h"
+#include "paddle.h"
 
 class Ball
 {
@@ -13,12 +14,11 @@ public:
     void update(double delta_time);
     void draw(SDL_Renderer* renderer);
 
-
 private:
-    int m_velocity_x;
-    int m_velocity_y;
-    double current_x;
-    double current_y;
-    SDL_Texture* m_image;
-    SDL_Rect m_position;
+    int             b_velocity_x;
+    int             b_velocity_y;
+    double          b_current_x;
+    double          b_current_y;
+    SDL_Texture*    b_image;
+    SDL_Rect        b_position;
 };

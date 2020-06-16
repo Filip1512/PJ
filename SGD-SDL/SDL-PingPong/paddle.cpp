@@ -3,13 +3,13 @@
 
 Paddle::Paddle(Type type, int x, int y)
 {
-	m_position.x = x;
-	m_position.y = y;
-	m_position.w = 5;
-	m_position.h = 60;
-	m_y = static_cast<double>(y);		// rzutowanie liczby
-	m_direction = Direction::NONE;
-	m_type = type;
+	p_position.x = x;
+	p_position.y = y;
+	p_position.w = 5;
+	p_position.h = 60;
+	p_y = static_cast<double>(y);		// rzutowanie liczby
+	p_direction = Direction::NONE;
+	p_type = type;
 }
 
 void Paddle::handle_input(SDL_Event const &event)
@@ -19,27 +19,27 @@ void Paddle::handle_input(SDL_Event const &event)
 		case SDL_KEYDOWN:
 			Uint8 const* key = SDL_GetKeyboardState(nullptr);
 			// --------------------------------- LEWY PAD, poruszanie siê
-			if (m_type == Type::LEFT)
+			if (p_type == Type::LEFT)
 			{
 				if (key[SDL_SCANCODE_W])
 				{
-					m_direction = Direction::UP;
+					p_direction = Direction::UP;
 				}
 				if (key[SDL_SCANCODE_S])
 				{
-					m_direction = Direction::DOWN;
+					p_direction = Direction::DOWN;
 				}
 			}
 			// --------------------------------- PRAWY PAD, poruszanie siê
-			else if (m_type == Type::RIGHT)
+			else if (p_type == Type::RIGHT)
 			{
 				if (key[SDL_SCANCODE_UP])
 				{
-					m_direction = Direction::UP;
+					p_direction = Direction::UP;
 				}
 				if (key[SDL_SCANCODE_DOWN])
 				{
-					m_direction = Direction::DOWN;
+					p_direction = Direction::DOWN;
 				}
 			}
 	}
@@ -47,29 +47,29 @@ void Paddle::handle_input(SDL_Event const &event)
 
 void Paddle::update(double delta_time)
 {
-	if (m_direction == Direction::UP)
+	if (p_direction == Direction::UP)
 	{
-		if (m_position.y < 0) m_direction = Direction::NONE;
+		if (p_position.y < 0) p_direction = Direction::NONE;
 
-		m_y = m_y - 5.0 * delta_time;
-		m_position.y = m_y;
+		p_y = p_y - 5.0 * delta_time;
+		p_position.y = p_y;
 	}
-	if (m_direction == Direction::DOWN)
+	if (p_direction == Direction::DOWN)
 	{
-		if (m_position.y > g_GAME_HEIGHT - m_position.h) m_direction = Direction::NONE;
+		if (p_position.y > g_GAME_HEIGHT - p_position.h) p_direction = Direction::NONE;
 
-		m_y = m_y + 5.0 * delta_time;
-		m_position.y = m_y;
+		p_y = p_y + 5.0 * delta_time;
+		p_position.y = p_y;
 	}
-	if (m_direction == Direction::NONE)
+	if (p_direction == Direction::NONE)
 	{
-		m_position.y = m_y;
+		p_position.y = p_y;
 	}
 }
 
 void Paddle::draw(SDL_Renderer* renderer)
 {
 	SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-	SDL_RenderFillRect(renderer, &m_position);
+	SDL_RenderFillRect(renderer, &p_position);
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 }
