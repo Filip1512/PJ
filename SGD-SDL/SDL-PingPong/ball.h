@@ -12,7 +12,7 @@ public:
 
     void init(SDL_Renderer* renderer, int x, int y);
     void update(double delta_time);
-    void draw(SDL_Renderer* renderer);
+    void draw(SDL_Renderer* renderer);    
 
 private:
     int             b_velocity_x;

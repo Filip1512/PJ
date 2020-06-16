@@ -9,7 +9,7 @@ int g_SCORE_P_RIGHT = 0;
 bool g_ROUND_START;
 
 // na dole w Paddle::Type::RIGHT pozycja x to "g_GAME_WIDTH - 5", bo szerokosc paddla to 5 i wychodzi³o poza okno gry :)
-Pong::Pong() : p_left_paddle(Paddle::Type::LEFT, 0, (g_GAME_HEIGHT / 2) - 50), p_right_paddle(Paddle::Type::RIGHT, g_GAME_WIDTH - 5, (g_GAME_HEIGHT / 2) - 50)
+Pong::Pong() : p_left_paddle(Paddle::Type::LEFT, 1, (g_GAME_HEIGHT / 2) - 50), p_right_paddle(Paddle::Type::RIGHT, g_GAME_WIDTH - 5, (g_GAME_HEIGHT / 2) - 50)
 {
 	SDL_SetWindowTitle(m_game_window, "Ping Pong by Filip");
 	SDL_CreateWindowAndRenderer(g_WINDOW_WIDTH, g_WINDOW_HEIGHT, SDL_WINDOW_RESIZABLE, &m_game_window, &m_game_window_renderer);

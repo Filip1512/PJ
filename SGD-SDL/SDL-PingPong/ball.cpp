@@ -72,7 +72,8 @@ void Ball::init(SDL_Renderer* renderer, int x, int y)
 	}
 
 
-	b_velocity_y = rand() % 5 + 2;
+	//b_velocity_y = rand() % 5 + 2;
+	b_velocity_y = 0;
 	if (num_direction == 0)
 	{
 		b_velocity_y = -b_velocity_y;
@@ -82,24 +83,23 @@ void Ball::init(SDL_Renderer* renderer, int x, int y)
 
 void Ball::update(double delta_time)
 {
-	if (CheckCollision(b_position, Paddle::p_position) == true)
-	{
-		b_velocity_y = -b_velocity_x;
+	//if (CheckCollision(b_position, Paddle::getPos()) == true)
+	//{
+	//	b_velocity_x = -b_velocity_x;
+	//}
+
+	if (b_position.x <= 5) {
+		b_velocity_x = -b_velocity_x;
 	}
-
-	//if (b_position.x <= 5) {
-	//	b_velocity_x = -b_velocity_x;
-	//}
-	//else if (b_position.x >= g_GAME_WIDTH - (5 + 16)) {		// 5 - szerokosc pada, 16 - szerokosc kulki
-	//	b_velocity_x = -b_velocity_x;
-	//}
-
-	//if (b_position.y <= 0) {
-	//	b_velocity_y = -b_velocity_y;
-	//}
-	//else if (b_position.y >= g_GAME_HEIGHT - 16) {			// 16 - wysokosc kulki
-	//	b_velocity_y = -b_velocity_y;
-	//}
+	else if (b_position.x >= g_GAME_WIDTH - (5 + 16)) {		// 5 - szerokosc pada, 16 - szerokosc kulki
+		b_velocity_x = -b_velocity_x;
+	}
+	if (b_position.y <= 0) {
+		b_velocity_y = -b_velocity_y;
+	}
+	else if (b_position.y >= g_GAME_HEIGHT - 16) {			// 16 - wysokosc kulki
+		b_velocity_y = -b_velocity_y;
+	}
 
 	b_current_x = b_current_x + (b_velocity_x * delta_time);
 	b_position.x = b_current_x;

@@ -14,10 +14,9 @@ public:
 	void update(double delta_time);					// aktulizowanie pozycji padów oraz kolizji
 	void draw(SDL_Renderer* renderer);				// narysowanie pada (prostok¹t)
 
-	static SDL_Rect	p_position;							// pozycja pada
-
 private:
 	double		p_y;								// pozycja w pionie
 	Type		p_type;								// gracz / pad (lewy czy prawy)
 	Direction	p_direction;						// kierunek poruszania sie
+	SDL_Rect	p_position;							// pozycja pada
 };

@@ -54,14 +54,14 @@ void Paddle::update(double delta_time)
 		p_y = p_y - 5.0 * delta_time;
 		p_position.y = p_y;
 	}
-	if (p_direction == Direction::DOWN)
+	else if (p_direction == Direction::DOWN)
 	{
 		if (p_position.y > g_GAME_HEIGHT - p_position.h) p_direction = Direction::NONE;
 
 		p_y = p_y + 5.0 * delta_time;
 		p_position.y = p_y;
 	}
-	if (p_direction == Direction::NONE)
+	else if (p_direction == Direction::NONE)
 	{
 		p_position.y = p_y;
 	}

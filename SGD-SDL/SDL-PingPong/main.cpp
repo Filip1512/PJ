@@ -1,4 +1,7 @@
 #include "pong.h"
+#include "paddle.h"
+#include "ball.h"
+
 
 int main(int argc, char* args[])
 {

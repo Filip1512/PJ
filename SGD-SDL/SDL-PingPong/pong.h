@@ -22,8 +22,6 @@ public:
 	void update(double delta_time);
 	void draw();
 
-	
-
 private:
 	SDL_Window*		m_game_window;
 	SDL_Event		m_game_window_event;
