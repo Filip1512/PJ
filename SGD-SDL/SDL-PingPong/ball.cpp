@@ -2,7 +2,6 @@
 #include "time.h"
 #include "SDL.h"
 #include "pong.h"
-#include "paddle.h"
 
 #include <iostream>
 #include <cstdlib>
@@ -14,7 +13,11 @@ Ball::~Ball()
 
 bool PointInRect(int x, int y, SDL_Rect rec)
 {
-	if (x > rec.x && y > rec.y && x < rec.x + rec.w && y < rec.y + rec.h)
+	if (x > rec.x &&
+		y > rec.y &&
+		x < rec.x + rec.w &&
+		y < rec.y + rec.h
+		)
 	{
 		return true;
 	}
@@ -87,7 +90,6 @@ void Ball::update(double delta_time)
 	//{
 	//	b_velocity_x = -b_velocity_x;
 	//}
-
 	if (b_position.x <= 5) {
 		b_velocity_x = -b_velocity_x;
 	}

@@ -1,7 +1,11 @@
 #include "pong.h"
 #include "ball.h"
+#include "paddle.h"
+#include "SDL_ttf.h"
+#include "SDL_image.h"
 #include "SDL_ttf.h"
 
+#include <sstream>
 #include <string>
 
 int g_SCORE_P_LEFT = 0;
@@ -14,6 +18,8 @@ Pong::Pong() : p_left_paddle(Paddle::Type::LEFT, 1, (g_GAME_HEIGHT / 2) - 50), p
 	SDL_SetWindowTitle(m_game_window, "Ping Pong by Filip");
 	SDL_CreateWindowAndRenderer(g_WINDOW_WIDTH, g_WINDOW_HEIGHT, SDL_WINDOW_RESIZABLE, &m_game_window, &m_game_window_renderer);
 	SDL_RenderSetLogicalSize(m_game_window_renderer, g_GAME_WIDTH, g_GAME_HEIGHT);
+
+
 	Pong::newRound(Winner::START);
 }
 
@@ -87,23 +93,51 @@ void Pong::draw()
 	SDL_RenderDrawRect(m_game_window_renderer, &rect_right);
 	SDL_SetRenderDrawColor(m_game_window_renderer, 0, 0, 0, 155);
 
-	//TTF_Init();
-	//TTF_Font* arial = TTF_OpenFont("arial.ttf", 64);
-	//SDL_Color msg_color = { 255,255,255 };
+	TTF_Init();
+	TTF_Font* arial = TTF_OpenFont("arial.ttf", 32);
+	SDL_Color msg_color = { 255,255,255 };
 
-	//char msg[128];
-	//sprintf_s(msg, "%d      %d", g_SCORE_P_LEFT, g_SCORE_P_RIGHT);
+	char msg[128];
+	sprintf_s(msg, "%d      %d", g_SCORE_P_LEFT, g_SCORE_P_RIGHT);
 
-	//SDL_Surface* messageSurface = TTF_RenderText_Solid(arial, msg, msg_color);
-	//SDL_Texture* Message = SDL_CreateTextureFromSurface(m_game_window_renderer, messageSurface);
-	//SDL_Rect msg_rect;
-	//msg_rect.x = rect_left.x+rect_left.w/2;
-	//msg_rect.y = 1;
-	//msg_rect.w = 50;
-	//msg_rect.h = 30;
+	SDL_Surface* messageSurface = TTF_RenderText_Solid(arial, msg, msg_color);
+	SDL_Texture* Message = SDL_CreateTextureFromSurface(m_game_window_renderer, messageSurface);
+	
+	SDL_Rect msg_rect;
+	msg_rect.x = 50;
+	msg_rect.y = 50;
+	msg_rect.w = 30;
+	msg_rect.h = 30;
 
-	//SDL_RenderCopy(m_game_window_renderer, Message, NULL, &msg_rect);
-	//TTF_Quit();
+	SDL_RenderCopy(m_game_window_renderer, Message, NULL, &msg_rect);
+	SDL_FreeSurface(messageSurface);
+	TTF_Quit();
+
+
+	//// ------------------------- tabela wynikow
+	//SDL_Surface* image = SDL_LoadBMP("sprite-sheet-numbers-b.bmp");
+	//SDL_Texture* imageTexture = SDL_CreateTextureFromSurface(m_game_window_renderer, image);
+
+	//SDL_Rect numRect;
+	//SDL_Rect numPos;
+	//int frameWidth, frameHeight;
+	//int textureWidth, textureHeight;
+
+	//SDL_QueryTexture(imageTexture, NULL, NULL, &textureWidth, &textureHeight);
+	//frameWidth = textureWidth / 10;
+	//frameHeight = textureHeight / 3;
+
+	//numRect.x = 100;
+	//numRect.y = 0;
+	//numRect.w = frameWidth;
+	//numRect.h = frameHeight;
+
+	//numPos.x = 0;
+	//numPos.y = 0;
+	//numPos.w = 32;
+	//numPos.h = 32;
+
+	//SDL_RenderCopy(m_game_window_renderer, imageTexture, &numRect, &numPos);
 
 	SDL_RenderPresent(m_game_window_renderer);
 
