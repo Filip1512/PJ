@@ -4,6 +4,8 @@
 #include "SDL_ttf.h"
 #include "SDL_image.h"
 #include "SDL_ttf.h"
+//#include "score.h"
+
 
 #include <sstream>
 #include <string>
@@ -93,51 +95,28 @@ void Pong::draw()
 	SDL_RenderDrawRect(m_game_window_renderer, &rect_right);
 	SDL_SetRenderDrawColor(m_game_window_renderer, 0, 0, 0, 155);
 
+	/*
 	TTF_Init();
-	TTF_Font* arial = TTF_OpenFont("arial.ttf", 32);
+	TTF_Font* arial = TTF_OpenFont("arial.ttf", 128);
 	SDL_Color msg_color = { 255,255,255 };
 
 	char msg[128];
-	sprintf_s(msg, "%d      %d", g_SCORE_P_LEFT, g_SCORE_P_RIGHT);
+	sprintf_s(msg, "%d     %d", g_SCORE_P_LEFT, g_SCORE_P_RIGHT);
 
 	SDL_Surface* messageSurface = TTF_RenderText_Solid(arial, msg, msg_color);
 	SDL_Texture* Message = SDL_CreateTextureFromSurface(m_game_window_renderer, messageSurface);
-	
+
 	SDL_Rect msg_rect;
-	msg_rect.x = 50;
-	msg_rect.y = 50;
-	msg_rect.w = 30;
-	msg_rect.h = 30;
+	msg_rect.x = g_GAME_WIDTH/2-rect_left.w/2;
+	msg_rect.y = 0;
+	msg_rect.w = rect_left.w;
+	msg_rect.h = rect_left.h;
 
 	SDL_RenderCopy(m_game_window_renderer, Message, NULL, &msg_rect);
 	SDL_FreeSurface(messageSurface);
 	TTF_Quit();
+	*/
 
-
-	//// ------------------------- tabela wynikow
-	//SDL_Surface* image = SDL_LoadBMP("sprite-sheet-numbers-b.bmp");
-	//SDL_Texture* imageTexture = SDL_CreateTextureFromSurface(m_game_window_renderer, image);
-
-	//SDL_Rect numRect;
-	//SDL_Rect numPos;
-	//int frameWidth, frameHeight;
-	//int textureWidth, textureHeight;
-
-	//SDL_QueryTexture(imageTexture, NULL, NULL, &textureWidth, &textureHeight);
-	//frameWidth = textureWidth / 10;
-	//frameHeight = textureHeight / 3;
-
-	//numRect.x = 100;
-	//numRect.y = 0;
-	//numRect.w = frameWidth;
-	//numRect.h = frameHeight;
-
-	//numPos.x = 0;
-	//numPos.y = 0;
-	//numPos.w = 32;
-	//numPos.h = 32;
-
-	//SDL_RenderCopy(m_game_window_renderer, imageTexture, &numRect, &numPos);
 
 	SDL_RenderPresent(m_game_window_renderer);
 
@@ -145,6 +124,5 @@ void Pong::draw()
 	{
 		SDL_Delay(2000);
 		g_ROUND_START = false;
-	};
-
+	}
 }

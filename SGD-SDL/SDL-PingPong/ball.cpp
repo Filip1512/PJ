@@ -75,8 +75,8 @@ void Ball::init(SDL_Renderer* renderer, int x, int y)
 	}
 
 
-	//b_velocity_y = rand() % 5 + 2;
-	b_velocity_y = 0;
+	b_velocity_y = rand() % 5 + 2;
+	//b_velocity_y = 0;
 	if (num_direction == 0)
 	{
 		b_velocity_y = -b_velocity_y;
