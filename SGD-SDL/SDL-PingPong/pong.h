@@ -3,7 +3,7 @@
 #include "SDL.h"
 #include "paddle.h"
 #include "ball.h"
-//#include "score.h"
+#include "score.cpp"
 
 const int g_WINDOW_WIDTH = 640;
 const int g_WINDOW_HEIGHT = 480;
@@ -13,7 +13,7 @@ const int g_GAME_HEIGHT = 400;
 class Pong {
 
 public:
-	enum class Winner { START, LEFT, RIGHT};
+	enum class Winner { START, LEFT, RIGHT };
 
 	Pong();
 	~Pong() = default;
@@ -29,7 +29,6 @@ private:
 	SDL_Renderer*	m_game_window_renderer;
 
 	Ball			b_ball;
-	//Score			score;
 	Paddle			p_left_paddle;
 	Paddle			p_right_paddle;
 };

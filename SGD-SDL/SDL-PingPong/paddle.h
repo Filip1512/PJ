@@ -20,5 +20,4 @@ private:
 	double		p_y;								// pozycja w pionie
 	Type		p_type;								// gracz / pad (lewy czy prawy)
 	Direction	p_direction;						// kierunek poruszania sie
-
 };

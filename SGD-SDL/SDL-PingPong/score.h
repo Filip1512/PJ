@@ -1,20 +1,25 @@
-#/*pragma once
+/*#pragma once
 
-#include "SDL.h"
 #include "pong.h"
+#include "SDL.h"
+#include "SDL_ttf.h"
+
+#include <sstream>
+#include <string>
 
 class Score
 {
 public:
-	Score(SDL_Renderer* renderer);
-	~Score() = default;
+	Score(SDL_Rect msg_rect, SDL_Renderer* renderer, TTF_Font* font);
+	~Score();
 
-	void update(double delta_time);
-	void draw(SDL_Renderer* renderer);
+	void draw(SDL_Renderer* renderer, SDL_Texture* message, SDL_Rect msg_rect);
 
-private:
+	SDL_Renderer*	renderer;
+	TTF_Font*		font;
 	SDL_Rect		msg_rect;
 	SDL_Surface*	messageSurface;
-	SDL_Texture*	Message;
+	SDL_Texture*	message;
 	SDL_Color		msg_color;
-};*/
+};
+*/

@@ -86,7 +86,7 @@ void Ball::init(SDL_Renderer* renderer, int x, int y)
 
 void Ball::update(double delta_time)
 {
-	//if (CheckCollision(b_position, Paddle::getPos()) == true)
+	//if (CheckCollision(b_position, Paddle::position == true)
 	//{
 	//	b_velocity_x = -b_velocity_x;
 	//}

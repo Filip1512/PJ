@@ -3,8 +3,7 @@
 #include "paddle.h"
 #include "SDL_ttf.h"
 #include "SDL_image.h"
-#include "SDL_ttf.h"
-//#include "score.h"
+#include "score.cpp"
 
 
 #include <sstream>
@@ -22,11 +21,15 @@ Pong::Pong() : p_left_paddle(Paddle::Type::LEFT, 1, (g_GAME_HEIGHT / 2) - 50), p
 	SDL_RenderSetLogicalSize(m_game_window_renderer, g_GAME_WIDTH, g_GAME_HEIGHT);
 
 
+
 	Pong::newRound(Winner::START);
 }
 
 void Pong::newRound(Pong::Winner winner)
 {
+	TTF_Init();
+	TTF_Font* arial = TTF_OpenFont("arial.ttf", 128);
+
 	g_ROUND_START = true;
 
 	if (winner == Winner::LEFT)
@@ -37,6 +40,8 @@ void Pong::newRound(Pong::Winner winner)
 	{
 		g_SCORE_P_RIGHT += 1;
 	}
+
+
 
 	b_ball.init(m_game_window_renderer, (g_GAME_WIDTH / 2) - 8, (g_GAME_HEIGHT / 2) - 25);
 }
@@ -58,7 +63,7 @@ void Pong::game_loop()
 			p_right_paddle.handle_input(m_game_window_event);
 		}
 
-		update(1.0 / 60.0);	// 60fps
+		update(1.0 / 60.0);
 		draw();
 	}
 }
@@ -114,11 +119,12 @@ void Pong::draw()
 
 	SDL_RenderCopy(m_game_window_renderer, Message, NULL, &msg_rect);
 	SDL_FreeSurface(messageSurface);
-	TTF_Quit();
-	*/
+	TTF_Quit();*/
+	
 
-
+	
 	SDL_RenderPresent(m_game_window_renderer);
+	TTF_Quit();
 
 	if (g_ROUND_START == true)
 	{
