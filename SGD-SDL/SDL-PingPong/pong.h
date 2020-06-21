@@ -2,8 +2,9 @@
 
 #include "SDL.h"
 #include "paddle.h"
+#include "SDL_ttf.h"
 #include "ball.h"
-#include "score.cpp"
+//#include "score.cpp"
 
 const int g_WINDOW_WIDTH = 640;
 const int g_WINDOW_HEIGHT = 480;
@@ -16,12 +17,18 @@ public:
 	enum class Winner { START, LEFT, RIGHT };
 
 	Pong();
-	~Pong() = default;
+	~Pong();
 
 	void newRound(Winner winner);
 	void game_loop();
 	void update(double delta_time);
 	void draw();
+
+	TTF_Font*		font;
+	SDL_Color		msg_color;
+	SDL_Surface*	messageSurface;
+	SDL_Texture*	message;
+	SDL_Rect		msg_rect;
 
 private:
 	SDL_Window*		m_game_window;

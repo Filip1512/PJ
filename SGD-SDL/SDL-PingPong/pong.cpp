@@ -5,7 +5,6 @@
 #include "SDL_image.h"
 #include "score.cpp"
 
-
 #include <sstream>
 #include <string>
 
@@ -19,17 +18,19 @@ Pong::Pong() : p_left_paddle(Paddle::Type::LEFT, 1, (g_GAME_HEIGHT / 2) - 50), p
 	SDL_SetWindowTitle(m_game_window, "Ping Pong by Filip");
 	SDL_CreateWindowAndRenderer(g_WINDOW_WIDTH, g_WINDOW_HEIGHT, SDL_WINDOW_RESIZABLE, &m_game_window, &m_game_window_renderer);
 	SDL_RenderSetLogicalSize(m_game_window_renderer, g_GAME_WIDTH, g_GAME_HEIGHT);
-
-
-
+	
 	Pong::newRound(Winner::START);
+}
+
+Pong::~Pong()
+{
+	SDL_FreeSurface(messageSurface);
+	SDL_DestroyTexture(message);
+	TTF_Quit();
 }
 
 void Pong::newRound(Pong::Winner winner)
 {
-	TTF_Init();
-	TTF_Font* arial = TTF_OpenFont("arial.ttf", 128);
-
 	g_ROUND_START = true;
 
 	if (winner == Winner::LEFT)
@@ -40,7 +41,20 @@ void Pong::newRound(Pong::Winner winner)
 	{
 		g_SCORE_P_RIGHT += 1;
 	}
+	
+	TTF_Init();
+	font = TTF_OpenFont("arial.ttf", 128);
+	msg_color = { 255,255,255 };
 
+	msg_rect.x = g_GAME_WIDTH / 2 - 50 / 2;
+	msg_rect.y = 0;
+	msg_rect.w = 50;
+	msg_rect.h = 50;
+
+	char msg[128];
+	sprintf_s(msg, "%d     %d", g_SCORE_P_LEFT, g_SCORE_P_RIGHT);
+	messageSurface = TTF_RenderText_Solid(font, msg, msg_color);
+	message = SDL_CreateTextureFromSurface(m_game_window_renderer, messageSurface);
 
 
 	b_ball.init(m_game_window_renderer, (g_GAME_WIDTH / 2) - 8, (g_GAME_HEIGHT / 2) - 25);
@@ -100,31 +114,12 @@ void Pong::draw()
 	SDL_RenderDrawRect(m_game_window_renderer, &rect_right);
 	SDL_SetRenderDrawColor(m_game_window_renderer, 0, 0, 0, 155);
 
-	/*
-	TTF_Init();
-	TTF_Font* arial = TTF_OpenFont("arial.ttf", 128);
-	SDL_Color msg_color = { 255,255,255 };
 
-	char msg[128];
-	sprintf_s(msg, "%d     %d", g_SCORE_P_LEFT, g_SCORE_P_RIGHT);
+	SDL_RenderCopy(m_game_window_renderer, message, NULL, &msg_rect);
 
-	SDL_Surface* messageSurface = TTF_RenderText_Solid(arial, msg, msg_color);
-	SDL_Texture* Message = SDL_CreateTextureFromSurface(m_game_window_renderer, messageSurface);
 
-	SDL_Rect msg_rect;
-	msg_rect.x = g_GAME_WIDTH/2-rect_left.w/2;
-	msg_rect.y = 0;
-	msg_rect.w = rect_left.w;
-	msg_rect.h = rect_left.h;
 
-	SDL_RenderCopy(m_game_window_renderer, Message, NULL, &msg_rect);
-	SDL_FreeSurface(messageSurface);
-	TTF_Quit();*/
-	
-
-	
 	SDL_RenderPresent(m_game_window_renderer);
-	TTF_Quit();
 
 	if (g_ROUND_START == true)
 	{
