@@ -4,17 +4,18 @@ import java.util.Scanner;
 
 public class NWW {
  
-public static int nwd(int x, int y) {
-	while (x != y) {
-	if (x > y)
-		x -= y;
-	else
-		y -= x;
+	public int nwd(int x, int y) {
+		while (x != y) {
+		if (x > y)
+			x -= y;
+		else
+			y -= x;
+		}
+		return x;
 	}
-	return x;
-}
- 
-public static void main(String[] args) {
+	
+	public int nww;
+
 	int x,y;
 	 
 	Scanner sc = new Scanner(System.in);
@@ -25,6 +26,6 @@ public static void main(String[] args) {
 	System.out.print("Podaj druga liczbe: ");
 	y = sc.nextInt();
 	
-	System.out.println("NWW liczb " + x + " i " + y + " wynosi: " + ((x*y)/nwd(x,y)));
+	System.out.println("NWW liczb " + x + " i " + y + " wynosi: " + ((x*y)/nwd(x,y));
 	}
 }
