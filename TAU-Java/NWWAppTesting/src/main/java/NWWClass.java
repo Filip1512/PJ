@@ -26,11 +26,17 @@ public class NWWClass {
             //Pobieramy druga liczbe
             System.out.print("Podaj druga liczbe: ");
             y = sc.nextInt();
+            if (x < 0 || y < 0){
+                throw new IllegalArgumentException();
+            }
             //Wyswietlamy NWW
             System.out.print("NWW liczb " + x + " i " + y + " wynosi: " + nww(x, y));
         }
         catch (InputMismatchException e){
             System.out.print("To nie jest liczba!");
+        }
+        catch (IllegalArgumentException e){
+            System.out.print("Liczba musi być większa niż 1!");
         }
     }
 }
