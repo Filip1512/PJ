@@ -15,15 +15,21 @@ public class NWWTests {
         Assert.assertEquals(50, nwwtesting.nww(10, 25));
     }
 
+    @Test
+    public void nww_ObjectIsNotNull(){
+
+        NWWClass nwwtesting = new NWWClass();
+
+        Assert.assertNotNull(nwwtesting);
+    }
+/*
     @Test (expected = IllegalArgumentException.class)
     public void nww_CheckNegativeNumberException(){
 
         NWWClass nwwtesting = new NWWClass();
         nwwtesting.nww(-1, -1);
-        nwwtesting.nww(5, -1);
-        nwwtesting.nww(-1, 5);
         Assert.fail("Liczba musi być większa niż 1!");
-    }
+    }*/
 
 
     @Test(expected = ArithmeticException.class)

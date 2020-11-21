@@ -26,7 +26,7 @@ public class NWWClass {
             //Pobieramy druga liczbe
             System.out.print("Podaj druga liczbe: ");
             y = sc.nextInt();
-            if (x < 0 || y < 0){
+            if (x < 1 || y < 1){
                 throw new IllegalArgumentException();
             }
             //Wyswietlamy NWW
