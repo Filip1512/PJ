@@ -36,21 +36,46 @@ rule4 = ctrl.Rule(weight['light'] & driving_style['aggressive'] & type_of_tires[
 rule5 = ctrl.Rule(weight['light'] & driving_style['aggressive'] & type_of_tires['winter'], pressure['low'])
 rule6 = ctrl.Rule(weight['light'] & driving_style['aggressive'] & type_of_tires['all-season'], pressure['low'])
 
-#rule7= ctrl.Rule(weight['light'] & driving_style['aggressive'] & type_of_tires['all-season'], pressure['low'])
+rule7 = ctrl.Rule(weight['medium'] & driving_style['calm'] & type_of_tires['summer'], pressure['average'])
+rule8 = ctrl.Rule(weight['medium'] & driving_style['calm'] & type_of_tires['winter'], pressure['average'])
+rule9 = ctrl.Rule(weight['medium'] & driving_style['calm'] & type_of_tires['all-season'], pressure['average'])
+rule10 = ctrl.Rule(weight['medium'] & driving_style['aggressive'] & type_of_tires['summer'], pressure['average'])
+rule11 = ctrl.Rule(weight['medium'] & driving_style['aggressive'] & type_of_tires['winter'], pressure['average'])
+rule12 = ctrl.Rule(weight['medium'] & driving_style['aggressive'] & type_of_tires['all-season'], pressure['average'])
+
+rule13 = ctrl.Rule(weight['heavy'] & driving_style['calm'] & type_of_tires['winter'], pressure['high'])
+rule14 = ctrl.Rule(weight['heavy'] & driving_style['calm'] & type_of_tires['summer'], pressure['high'])
+rule15 = ctrl.Rule(weight['heavy'] & driving_style['calm'] & type_of_tires['all-season'], pressure['high'])
+rule16 = ctrl.Rule(weight['heavy'] & driving_style['aggressive'] & type_of_tires['winter'], pressure['high'])
+rule17 = ctrl.Rule(weight['heavy'] & driving_style['aggressive'] & type_of_tires['summer'], pressure['high'])
+rule18 = ctrl.Rule(weight['heavy'] & driving_style['aggressive'] & type_of_tires['all-season'], pressure['high'])
+
 
 rules = [ rule1,
           rule2,
           rule3,
           rule4,
           rule5,
-          rule6
+          rule6,
+          rule7,
+          rule8,
+          rule9,
+          rule10,
+          rule11,
+          rule12,
+          rule13,
+          rule14,
+          rule15,
+          rule16,
+          rule17,
+          rule18
           ]
 
 
 pressureMake_ctrl = ctrl.ControlSystem(rules)
 pressureMake = ctrl.ControlSystemSimulation(pressureMake_ctrl)
 
-pressureMake.input['weight'] = 1200
+pressureMake.input['weight'] = 1800
 pressureMake.input['driving_style'] = 0
 pressureMake.input['type_of_tires'] = 0
 
