@@ -1,5 +1,6 @@
 import org.junit.*;
 
+import java.util.InputMismatchException;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class NWWTests {
@@ -22,14 +23,14 @@ public class NWWTests {
 
         Assert.assertNotNull(nwwtesting);
     }
-/*
+
     @Test (expected = IllegalArgumentException.class)
     public void nww_CheckNegativeNumberException(){
 
         NWWClass nwwtesting = new NWWClass();
         nwwtesting.nww(-1, -1);
         Assert.fail("Liczba musi być większa niż 1!");
-    }*/
+    }
 
 
     @Test(expected = ArithmeticException.class)
@@ -44,17 +45,39 @@ public class NWWTests {
         Assert.fail("To nie jest liczba!");
     }
 
-/*
+
     @Test(expected = InputMismatchException.class)
     public void nww_InputMismatchException() {
         Assert.fail();
     }
 
-        //nie wiem jak to obsłużyć
-    @Test(expected = InputMismatchException.class)
-    public void nww_CheckZeroException(){
+    @Test
+    public void nwd_EqualsSomeResults() {
 
+        NWWClass nwwtesting = new NWWClass();
+
+        Assert.assertEquals(2, nwwtesting.nwd(6, 10));
+        Assert.assertEquals(5, nwwtesting.nwd(5, 15));
+        Assert.assertEquals(6, nwwtesting.nwd(18, 24));
+        Assert.assertEquals(25, nwwtesting.nwd(75, 100));
     }
-*/
+    @Test
+    public void calc_BasicOperations(){
+
+        NWWClass nwwtesting = new NWWClass();
+
+        Assert.assertEquals(4, nwwtesting.calc(2, 2, "+"));
+        Assert.assertEquals(6, nwwtesting.calc(2, 3, "*"));
+        Assert.assertEquals(5, nwwtesting.calc(6, 1, "-"));
+        Assert.assertEquals(2, nwwtesting.calc(10, 5, "/"));
+        Assert.assertEquals(0, nwwtesting.calc(10, 5, ""));
+    }
+
+    @Test
+    public void nww_CalcAndNwd(){
+        NWWClass nwwtesting = new NWWClass();
+
+        Assert.assertEquals(15, nwwtesting.nww(nwwtesting.calc(1,2, "+"), nwwtesting.calc(10,2,"/")));
+    }
 
 }

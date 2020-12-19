@@ -52,7 +52,6 @@ public class NWWClass {
         operator = sc.next();
 
         try {
-
             //Pobieramy pierwsza liczbe
             System.out.print("Podaj pierwsza liczbe: ");
             x = sc.nextInt();
