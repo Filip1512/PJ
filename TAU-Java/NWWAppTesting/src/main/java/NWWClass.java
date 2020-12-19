@@ -16,10 +16,43 @@ public class NWWClass {
         return (x * y) / nwd(x,y);
     }
 
+    public static int calc(int x, int y, String operator){
+        int result = 0;
+
+        switch(operator) {
+            case "+": {
+                result = x + y;
+                break;
+            }
+            case "-": {
+                result = x - y;
+                break;
+            }
+            case "*": {
+                result = x * y;
+                break;
+            }
+            case "/": {
+                result = x / y;
+                break;
+            }
+            default: {
+                result = 0;
+                System.out.println("Podano zly znak. Wybierz +, -, * lub / !");
+            }
+        }
+
+        return result;
+    }
+
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         int x,y;
+        String operator = "";
+        operator = sc.next();
+
         try {
-            Scanner sc = new Scanner(System.in);
+
             //Pobieramy pierwsza liczbe
             System.out.print("Podaj pierwsza liczbe: ");
             x = sc.nextInt();
