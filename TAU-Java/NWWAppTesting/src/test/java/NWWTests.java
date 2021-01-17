@@ -1,9 +1,12 @@
 import org.junit.*;
+import org.mockito.Mockito;
 
 import java.util.InputMismatchException;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class NWWTests {
+
+    int mockObj;
 
     @Test
     public void nww_EqualsRandomNumbersHigherThanTwo() {
@@ -79,5 +82,4 @@ public class NWWTests {
 
         Assert.assertEquals(15, nwwtesting.nww(nwwtesting.calc(1,2, "+"), nwwtesting.calc(10,2,"/")));
     }
-
 }
