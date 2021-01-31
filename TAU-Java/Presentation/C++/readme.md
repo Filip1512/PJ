@@ -16,7 +16,7 @@ GoogleTest C++ jest frameworkiem, który pozwala na pisanie jeszcze lepszych tes
 
 6. Testy powinny być szybkie. Dzięki platformie testowej Google C ++ możesz ponownie wykorzystywać współdzielone zasoby w testach i płacić za konfigurację / wyłączenie tylko raz, bez uzależniania testów od siebie nawzajem. 
 
-Platforma testowa Google C++ jest oparta na popularnej architekturze xUnit, więc osoby wcześniej korzystające z JUnit lub PyUnit poczujesz się jak u siebie.
+Platforma testowa Google C++ jest oparta na popularnej architekturze xUnit, więc osoby wcześniej korzystające z JUnit lub PyUnit poczują się jak u siebie.
 
 
 ## Informacja dotycząca instalacji
