@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/RL-LunarLander.iml" filepath="$PROJECT_DIR$/.idea/RL-LunarLander.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/RL-PG-CartPole.iml" filepath="$PROJECT_DIR$/.idea/RL-PG-CartPole.iml" />
     </modules>
   </component>
 </project>
