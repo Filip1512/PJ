@@ -23,14 +23,13 @@ print("env.observation_space.high", env.observation_space.high)
 print("env.observation_space.low", env.observation_space.low)
 
 
-RENDER_ENV = False
-EPISODES = 500
-rewards = []
-RENDER_REWARD_MIN = 50
+RENDER_ENV = False      # okno z grą
+EPISODES = 500          # maksymalna ilość iteracji
+rewards = []            # nagroda
+RENDER_REWARD_MIN = 50  # minimalna nagroda do wyrenderowania gry
 
 if __name__ == "__main__":
 
-    # Load checkpoint
     load_path = None #"output/weights/CartPole-v0.ckpt"
     save_path = None #"output/weights/CartPole-v0-temp.ckpt"
 
@@ -44,7 +43,7 @@ if __name__ == "__main__":
     )
 
 
-    for episode in range(EPISODES):
+    for episode in range(EPISODES):     # start nauki
 
         observation = env.reset()
         episode_reward = 0
@@ -74,7 +73,7 @@ if __name__ == "__main__":
                 # 4. Train neural network
                 discounted_episode_rewards_norm = PG.learn()
 
-                # Render env if we get to rewards minimum
+                # Renderuj gre dopiero gdy program uzyska minimalny wynik RENDER_REWARD_MIN
                 if max_reward_so_far > RENDER_REWARD_MIN: RENDER_ENV = True
 
 

@@ -44,7 +44,7 @@ class PolicyGradient:
         # http://0.0.0.0:6006/
         tf.compat.v1.summary.FileWriter("logs/", self.sess.graph)
 
-        self.sess.run(tf.compat.v1.global_variables_initializer ())
+        self.sess.run(tf.compat.v1.global_variables_initializer())
 
         # 'Saver' op to save and restore all the variables
         self.saver = tf.compat.v1.train.Saver()
@@ -107,10 +107,10 @@ class PolicyGradient:
         # Reset the episode data
         self.episode_observations, self.episode_actions, self.episode_rewards  = [], [], []
 
-        # Save checkpoint
-        if self.save_path is not None:
-            save_path = self.saver.save(self.sess, self.save_path)
-            print("Model saved in file: %s" % save_path)
+        # # Save checkpoint
+        # if self.save_path is not None:
+        #     save_path = self.saver.save(self.sess, self.save_path)
+        #     print("Model saved in file: %s" % save_path)
 
         return discounted_episode_rewards_norm
 
