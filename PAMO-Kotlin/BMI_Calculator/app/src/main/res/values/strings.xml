@@ -14,5 +14,11 @@
     <string name="obese_class_ii">Obese Class II (Severely Obese)</string>
     <string name="obese_class_iii">Obese Class III (Very Severely Obese)</string>
 
-    <string name="welcomeButton">Welcome in BMI Calculator App!</string>
+    <string name="welcomeText">Welcome in BMI Calculator App!</string>
+    <string name="welcomeButton">Check your BMI!</string>
+    <string name="welcomeQuiz">Go to Quiz!</string>
+    <string name="welcomeGraph">Watch COVID-19 stats!</string>
+
+    <string name="graph">SARS-CoV-2 Graph</string>
+    <string name="graph_covid">Active COVID-19 infections for last 3 days in Poland</string>
 </resources>

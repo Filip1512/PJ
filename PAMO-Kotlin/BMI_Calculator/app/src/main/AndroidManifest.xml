@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BMI_Calculator">
+        <activity android:name=".activity_graph"></activity>
+        <activity android:name=".activity_quiz" />
         <activity android:name=".MainActivity" />
         <activity android:name=".activity_welcome">
             <intent-filter>
